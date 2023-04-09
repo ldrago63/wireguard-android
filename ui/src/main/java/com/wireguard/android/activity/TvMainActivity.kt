@@ -237,6 +237,9 @@ class TvMainActivity : AppCompatActivity() {
         isDeleting.addOnPropertyChangedCallback(updateBackPressedCallback)
         filesRoot.addOnPropertyChangedCallback(updateBackPressedCallback)
         backPressedCallback.isEnabled = false
+        binding.menuSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
 
         binding.executePendingBindings()
         setContentView(binding.root)
